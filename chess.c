@@ -11,10 +11,11 @@
  
 */
 void showBoard (int board[8][8]) {
-	printf("\n\n┌────────┐\n");
+	printf("\n\n┌─┬─┬─┬─┬─┬─┬─┬─┐\n");
 	for (int i = 0; i < 8; i++) {
-		printf("│"); 
+//		printf("│"); 
 		for (int j = 0; j < 8; j++) {
+			printf("│"); 
 //			printf(""); 
 			switch (board[i][j]) {
 				case 0: 
@@ -37,8 +38,9 @@ void showBoard (int board[8][8]) {
 			}
 		}
 		printf("│\n") ;
+		printf("├─┼─┼─┼─┼─┼─┼─┼─┤\n") ;
 	}
-	printf("\n\n└────────┘\n");
+	printf("└─┴─┴─┴─┴─┴─┴─┴─┘\n");
 }
 
 int main () {
