@@ -1,3 +1,5 @@
+#inlcude<stdio.h>
+
 // ♔ ♕ ♖ ♗ ♘ ♙
 void showBoard (int ** board) {
 	for (int i = 0; i < 8; i++) {
