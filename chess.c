@@ -36,6 +36,28 @@ int main () {
 	printf("Terminating...\n") ;
 }
 
-bool isValidMove (int x1, int x2, int y1, int y2) {
-	
+bool isValidMove (int x1, int x2, int y1, int y2, int board[8][8]) {
+	if (board[x1][x2] == 0) {
+		return false;
+	} else if (board[x1][x2] == 1) { // king
+	} else if (board[x1][x2] == 2) { // queen
+	} else if (board[x1][x2] == 3) { // bishop
+	} else if (board[x1][x2] == 4) { // knight
+	} else if (board[x1][x2] == 5) { // Rook
+	} else if (board[x1][x2] == 6) { // Pawn
+		if (y1 - y2 == 1 && x1 == x2) { // forward one
+			if (board[x1][y2] == 0) {
+				return true;
+			}
+		} else if (y1 - y2 == 2 && x1 == x2) { // forward two
+			if (board[x1][y2] == 0 && board[x1][y2+1] == 0) {
+				return true;
+			}
+		} else if (abs(x1 - x2) == 1 && y1-y2 == 1) { // capture left or right
+			if (board[x2][y2] != 0) {
+				return true;
+			}
+		}
+		return false;
+	}
 }
