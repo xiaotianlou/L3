@@ -21,9 +21,6 @@ int main () {
 
   printf("Enter `q` to quit at any time.\n");
   printf("Moves are entered as co-ordinate pairs, such as \"13-33\" \n");
-  printf("White Player to move.\n");
-  printf("Please enter horizontal coordinate of piece to move >> ");
-  scanf("%s", buf);
   do {
     if (whitesMove) {
       printf("White to move.\n");
