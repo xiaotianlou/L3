@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+bool isValidMove (int x1, int x2, int y1, int y2) ;
+
 int main () {
 	printf("Welcome to Terminal Chess!\n");
 	printf("Initializing Board...\n")	;
@@ -32,4 +34,8 @@ int main () {
   } while (buf[0] != 'q' && buf[0] != 'Q') ;
     
 	printf("Terminating...\n") ;
+}
+
+bool isValidMove (int x1, int x2, int y1, int y2) {
+	
 }
