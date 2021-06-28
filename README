@@ -1,3 +1,15 @@
 The purpose of this program is to enable the playing of chess in a command-line environment.  
 
 (The other purpose of this repo is to give you practice merging branches!)
+
+Information about Terminal Chess:
+
+The board is stored as a 2D array of integers.  In integers have the following interpretations.
+
+0 -> Blank Space
+1 -> King
+2 -> Queen
+3 -> Bishop
+4 -> Knight
+5 -> Rook
+6 -> Pawn
