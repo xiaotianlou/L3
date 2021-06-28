@@ -12,16 +12,16 @@ bool validMove (char* input, int* board[8][8]) {
 	// out of bounds check
 	if (start_x > 7 || start_x < 0) {
 		return false;
-	} else if start_y > 7 || start_y < 0) {
+	} else if (start_y > 7 || start_y < 0) {
 		return false;
-	} else if end_x > 7 || end_x < 0) {
+	} else if (end_x > 7 || end_x < 0) {
 		return false;
-	} else if end_y > 7 || end_y < 0) {
+	} else if (end_y > 7 || end_y < 0) {
 		return false;
 	}
 	
 	// piece move checks 
-
+	int* validMoves[2];
 	switch (*board[start_x][start_y]) {
 		case 0: // moving a blank spot is never valid
 			return false;
@@ -47,10 +47,10 @@ bool validMove (char* input, int* board[8][8]) {
 }
 
 void makeMove (char* input, int* board[8][8]) {
-	start_x = input[0] - 48;
-	start_y = input[1] - 48;
-	end_x = input[3] - 48;
-	end_y = input[4] - 48;
+	int start_x = input[0] - 48;
+	int start_y = input[1] - 48;
+	int end_x = input[3] - 48;
+	int end_y = input[4] - 48;
 	
 	*board[end_x][end_y] = *board[start_x][start_y];
 }
