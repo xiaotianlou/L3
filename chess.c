@@ -14,15 +14,15 @@ int main () {
 				             , {5, 4, 3, 1, 2, 3, 4, 5}
 				             } ;
   char buf[100];
-  bool whitesMove = True;
+  bool whitesMove = true;
 	printf("Board Initialized!\n") ;
 	
-	showBoard(board);
+// 	showBoard(board);
 
   printf("Enter `q` to quit at any time.\n");
   printf("Moves are entered as co-ordinate pairs, such as \"13-33\" \n");
   printf("White Player to move.\n");
-  prinf("Please enter horizontal coordinate of piece to move >> ");
+  printf("Please enter horizontal coordinate of piece to move >> ");
   scanf("%s", buf);
   do {
     if (whitesMove) {
@@ -30,9 +30,9 @@ int main () {
     } else {
       printf("Black to move.\n");
     }
-    printf("♔ >> ")
+    printf("♔ >> ");
     scanf("%s", buf);
-  } while (buf[0] != `q` && buf[0] != `Q`) 
+  } while (buf[0] != 'q' && buf[0] != 'Q') ;
     
 	printf("Terminating...\n") ;
 }
