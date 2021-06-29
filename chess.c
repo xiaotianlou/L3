@@ -28,6 +28,45 @@ bool validMove (char* input, int* board[8][8]) {
 		case 1: // King
 			break;
 		case 2: // Queen
+			int xcheck = start_x;
+			int ycheck = start_y;
+			
+			while (true) {
+				xcheck += (start_x > end_x)? -1 : 1;
+				ycheck += (start_y > end_y)? -1 : 1;
+		 		if (xcheck < 0 || ycheck < 0 || xcheck > 7 || ycheck > 7) {
+					break;
+				}
+				if (board[xcheck][ycheck] != 0) {
+					piecesInWay += 1;
+				} 
+				if (piecesInWay == 2) {
+					break;
+				}
+				if (xcheck == end_x && ycheck == end_y) {
+					return true;
+				}
+			}
+			while (true) {
+				if (start_y == end_y) {
+					xcheck += (start_x > end_x)? -1 : 1;
+				} else if (start_x == end_x) {
+					ycheck += (start_y > end_y)? -1 : 1;
+				} 
+			
+		 		if (xcheck < 0 || ycheck < 0 || xcheck > 7 || ycheck > 7) {
+					break;
+				}
+				if (board[xcheck][ycheck] != 0) {
+					piecesInWay += 1;
+				} 
+				if (piecesInWay == 2) {
+					break;
+				}
+				if (xcheck == end_x && ycheck == end_y) {
+					return true;
+				}
+			}
 			break;
 		case 3 : // Bishop
 			break;
