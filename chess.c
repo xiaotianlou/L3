@@ -37,22 +37,61 @@ int main () {
 }
 
 bool isValidMove (int x1, int x2, int y1, int y2, int board[8][8]) {
+	int xcheck = x1;
+	int ycheck = y1;
+	int piecesInWay = 0;
 	if (board[x1][x2] == 0) {
 		return false;
-	} else if (board[x1][x2] == 1) { 
+	} else if (board[x1][y2] == 1) { // king
 		if (abs(x1 - x2) <= 1 and abs(y1-y2) <= 1) {
 			return true;
 		}
-		// king
-	} else if (board[x1][x2] == 2) { 
+	} else if (board[x1][y2] == 2) { 
 		// queen
-	} else if (board[x1][x2] == 3) { 
-		// bishop
-	} else if (board[x1][x2] == 4) { 
+	} else if (board[x1][y2] == 3) {  // bishop
+		while (true) {
+			xcheck += (x1 > x2)? -1 : 1;
+			ycheck += (y1 > y2)? -1 : 1;
+		 	if (xcheck < 0 || ycheck < 0 || xcheck > 7 || ycheck > 7) {
+				break;
+			}
+			if (board[xcheck][ycheck] != 0) {
+				piecesInWay += 1;
+			} 
+			if (piecesInWay == 2) {
+				break;
+			}
+			if (xcheck == x2 && ycheck == y2) {
+				return true;
+			}
+		}
+	} else if (board[x1][y2] == 4) { 
 		// knight
-	} else if (board[x1][x2] == 5) { 
-		// Rook
-	} else if (board[x1][x2] == 6) { // Pawn
+	} else if (board[x1][y2] == 5) { // Rook
+		while (true) {
+			if (y1 == y2) {
+				xcheck += (x1 > x2)? -1 : 1;
+			} else if (x1 == x2) {
+				ycheck += (y1 > y2)? -1 : 1;
+			} else {
+				return false;
+			}
+			
+		 	if (xcheck < 0 || ycheck < 0 || xcheck > 7 || ycheck > 7) {
+				break;
+			}
+			if (board[xcheck][ycheck] != 0) {
+				piecesInWay += 1;
+			} 
+			if (piecesInWay == 2) {
+				break;
+			}
+			if (xcheck == x2 && ycheck == y2) {
+				return true;
+			}
+		}
+		
+	} else if (board[x1][y2] == 6) { // Pawn
 		if (y1 - y2 == 1 && x1 == x2) { // forward one
 			if (board[x1][y2] == 0) {
 				return true;
