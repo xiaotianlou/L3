@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
 bool isValidMove (int x1, int x2, int y1, int y2) ;
 
