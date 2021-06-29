@@ -42,7 +42,7 @@ void showBoard (int board[8][8]) {
 		}
 		printf("║\n") ;
 	}
-	printf("\n\n╚════════╝\n");
+	printf("╚════════╝\n");
 }
 
 int main () {
