@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+void showBoard(int board[8][8]);
+
 bool validMove (char* input) {
 	// Add move validity checks some other time! Too lazy!! 
 	return True;
@@ -36,7 +38,8 @@ int main () {
   printf("Enter `q` to quit at any time.\n");
   printf("Moves are entered as co-ordinate pairs, such as \"13-33\" \n");
   do {
-    bool flag = false;  
+    bool flag = false; 
+    showBoard(board);
     do {
 	if (flag) {
 		printf("Move Invalid! Try again!")
@@ -49,7 +52,7 @@ int main () {
     	printf("♔ >> ");
 	scanf("%s", buf);
 	flag = true;
-    } while (!validMove(buf));
+    } while (!isValidMove(buf, board) && buf[0] != 'q' && buf[0] != 'Q');
     makeMove(buf, &board);
   } while (buf[0] != 'q' && buf[0] != 'Q') ;
     
