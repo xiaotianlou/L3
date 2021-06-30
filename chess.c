@@ -2,7 +2,7 @@
 #include <stdbool.h>
 
 void showBoard(int board[8][8]) {
-	print ("Added on another branch...\n");
+	printf("Added on another branch...\n");
 }
 
 bool isValidMove (char* input, int board[8][8]) {
@@ -10,7 +10,7 @@ bool isValidMove (char* input, int board[8][8]) {
 	return true;
 }
 
-void makeMove (char* input, int* board[8][8]) {
+void makeMove (char* input, int board[8][8]) {
 	int start_x = input[0] - 48;
 	int start_y = input[1] - 48;
 	int end_x = input[3] - 48;
