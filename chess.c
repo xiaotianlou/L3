@@ -16,7 +16,7 @@ void makeMove (char* input, int board[8][8]) {
 	int end_x = input[3] - 48;
 	int end_y = input[4] - 48;
 	
-	*board[end_x][end_y] = *board[start_x][start_y];
+	board[end_x][end_y] = board[start_x][start_y];
 }
 
 int main () {
