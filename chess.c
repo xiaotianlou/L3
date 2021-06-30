@@ -2,7 +2,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-bool isValidMove (int x1, int x2, int y1, int y2) ;
+bool isValidMove (int x1, int x2, int y1, int y2, int board[8][8]) ;
 
 int main () {
 	printf("Welcome to Terminal Chess!\n");
@@ -41,7 +41,7 @@ bool isValidMove (int x1, int x2, int y1, int y2, int board[8][8]) {
 	if (board[x1][x2] == 0) {
 		return false;
 	} else if (board[x1][x2] == 1) { 
-		if (abs(x1 - x2) <= 1 and abs(y1-y2) <= 1) {
+		if (abs(x1 - x2) <= 1 && abs(y1-y2) <= 1) {
 			return true;
 		}
 		// king
