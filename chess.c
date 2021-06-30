@@ -86,12 +86,13 @@ bool isValidMove (char* input, int board[8][8]) {
 }
 
 void makeMove (char* input, int board[8][8]) {
-	int start_x = input[0] - 48;
-	int start_y = input[1] - 48;
-	int end_x = input[3] - 48;
-	int end_y = input[4] - 48;
+	int start_y = input[0] - 48;
+	int start_x = input[1] - 48;
+	int end_y = input[3] - 48;
+	int end_x = input[4] - 48;
 	
 	board[end_x][end_y] = board[start_x][start_y];
+	board[start_x][start_y] = 0;
 }
 
 int main () {
@@ -130,6 +131,7 @@ int main () {
 	flag = true;
     } while (!isValidMove(buf, board));
     makeMove(buf, board);
+    whitesMove = !whitesMove;
   } while (buf[0] != 'q' && buf[0] != 'Q') ;
     
 	printf("Terminating...\n") ;
