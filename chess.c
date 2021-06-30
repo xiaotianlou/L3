@@ -14,11 +14,11 @@ void showBoard (int board[8][8]) {
  			} else if (board[i][j] == 2) {
 				printf("♕");
 			} else if (board[i][j] == 3) {
-				printf("♖");
-			} else if (board[i][j] == 4) {
 				printf("♗");
-			} else if (board[i][j] == 5) {
+			} else if (board[i][j] == 4) {
 				printf("♘");
+			} else if (board[i][j] == 5) {
+				printf("♖");
 			} else if (board[i][j] == 6) {
 				printf("♙");
 			}
