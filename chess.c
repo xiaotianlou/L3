@@ -3,7 +3,7 @@
 
 bool memberOf (int *ValidMoves[2], int x, int y) ; 
 
-bool validMove (char* input, int* board[8][8]) {
+bool isValidMove (char* input, int* board[8][8]) {
 	int start_x = input[0] - 48;
 	int start_y = input[1] - 48;
 	int end_x = input[3] - 48;
@@ -85,13 +85,13 @@ bool validMove (char* input, int* board[8][8]) {
 	return true;
 }
 
-void makeMove (char* input, int* board[8][8]) {
+void makeMove (char* input, int board[8][8]) {
 	int start_x = input[0] - 48;
 	int start_y = input[1] - 48;
 	int end_x = input[3] - 48;
 	int end_y = input[4] - 48;
 	
-	*board[end_x][end_y] = *board[start_x][start_y];
+	board[end_x][end_y] = board[start_x][start_y];
 }
 
 int main () {
@@ -118,7 +118,7 @@ int main () {
     bool flag = false;  
     do {
 	if (flag) {
-		printf("Move Invalid! Try again!")
+		printf("Move Invalid! Try again!");
 	}
     	if (whitesMove) {
       		printf("White to move.\n");
@@ -128,8 +128,8 @@ int main () {
     	printf("♔ >> ");
 	scanf("%s", buf);
 	flag = true;
-    } while (!validMove(buf));
-    makeMove(buf, &board);
+    } while (!isValidMove(buf, board));
+    makeMove(buf, board);
   } while (buf[0] != 'q' && buf[0] != 'Q') ;
     
 	printf("Terminating...\n") ;
