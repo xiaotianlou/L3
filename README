@@ -13,5 +13,3 @@ The board is stored as a 2D array of integers.  In integers have the following i
 4 -> Knight
 5 -> Rook
 6 -> Pawn
-
-Boing! 
