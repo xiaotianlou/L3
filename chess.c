@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-void showBoard(int board[8][8]);
+void showBoard(int board[8][8]) {
+	print ("Added on another branch...\n");
+}
 
 bool isValidMove (char* input, int board[8][8]) {
 	// Add move validity checks some other time! Too lazy!! 
@@ -53,7 +55,7 @@ int main () {
 	scanf("%s", buf);
 	flag = true;
     } while (!isValidMove(buf, board) && buf[0] != 'q' && buf[0] != 'Q');
-    makeMove(buf, &board);
+    makeMove(buf, board);
   } while (buf[0] != 'q' && buf[0] != 'Q') ;
     
 	printf("Terminating...\n") ;
