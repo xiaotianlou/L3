@@ -22,15 +22,15 @@ bool validMove (char* input, int* board[8][8]) {
 	
 	// piece move checks 
 	int* validMoves[2];
+	int xcheck = start_x;
+	int ycheck = start_y;
+	int piecesInWay = 0;
 	switch (*board[start_x][start_y]) {
 		case 0: // moving a blank spot is never valid
 			return false;
 		case 1: // King
 			break;
 		case 2: // Queen
-			int xcheck = start_x;
-			int ycheck = start_y;
-			
 			while (true) {
 				xcheck += (start_x > end_x)? -1 : 1;
 				ycheck += (start_y > end_y)? -1 : 1;
