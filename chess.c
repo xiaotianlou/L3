@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-bool memberOf (int *ValidMoves[2], int x, int y) ; 
+//bool memberOf (int *ValidMoves[2], int x, int y) ; 
 
-bool isValidMove (char* input, int* board[8][8]) {
+bool isValidMove (char* input, int board[8][8]) {
 	int start_x = input[0] - 48;
 	int start_y = input[1] - 48;
 	int end_x = input[3] - 48;
@@ -77,11 +77,11 @@ bool isValidMove (char* input, int* board[8][8]) {
 		case 6 : // Pawn
 			break;
 	}
-	
+	/*
 	if (!memberOf(validMoves, end_x, end_y)) {
 		return false;
 	}
-	
+	*/
 	return true;
 }
 
