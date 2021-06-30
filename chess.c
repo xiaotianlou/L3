@@ -91,21 +91,26 @@ bool isValidMove (int x1, int x2, int y1, int y2, int board[8][8]) {
 				return true;
 			}
 		}
-		
 	} else if (board[x1][y2] == 6) { // Pawn
-		if (y1 - y2 == 1 && x1 == x2) { // forward one
-			if (board[x1][y2] == 0) {
+		//printf("Pawn Selected\n");
+		//printf("Moving in column %d \n", y1);
+		//printf("y1-y2=%d\n", x1-x2);
+		if (x1 - x2 == 1 && y1 == y2) { // forward one
+			printf("Detected forward move by 1\n");
+			if (board[x2][y2] == 0) {
 				return true;
 			}
-		} else if (y1 - y2 == 2 && x1 == x2) { // forward two
-			if (board[x1][y2] == 0 && board[x1][y2+1] == 0) {
+		} else if (x1 - x2 == 2 && y1 == y2) { // forward two
+//			printf("Detected forward move by 2\n");
+			if (board[x2][y2] == 0 && board[x2+1][y2] == 0 && x1 == 6) {
 				return true;
 			}
-		} else if (abs(x1 - x2) == 1 && y1-y2 == 1) { // capture left or right
+		} else if (abs(y1 - y2) == 1 && x1-x2 == 1) { // capture left or right
+			//printf("Detected Capture\n");
 			if (board[x2][y2] != 0) {
 				return true;
 			}
 		}
-		return false;
 	}
+	return false;
 }
