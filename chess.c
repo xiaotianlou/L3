@@ -25,7 +25,7 @@ bool isValidMove (char* input, int board[8][8]) {
 	int xcheck = start_x;
 	int ycheck = start_y;
 	int piecesInWay = 0;
-	switch (*board[start_x][start_y]) {
+	switch (board[start_x][start_y]) {
 		case 0: // moving a blank spot is never valid
 			return false;
 		case 1: // King
