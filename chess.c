@@ -2,6 +2,8 @@
 
 
 // ♔ ♕ ♖ ♗ ♘ ♙
+void showBoard (int board[8][8]) {
+	printf("\n\n  01234567\n");
 
 /* ┌ └ ┐ ┘
 
@@ -18,10 +20,11 @@ void showBoard (int board[8][8]) {
 	printf("\n\n╔════════╗\n");
 	for (int i = 0; i < 8; i++) {
 		printf("║");
+		printf("%d ", i);
 		for (int j = 0; j < 8; j++) {
 //			printf("");
 			switch (board[i][j]) {
-				case 0: 
+				case 0:
 					printf(" ");
 					break;
 				case 1:
@@ -36,7 +39,7 @@ void showBoard (int board[8][8]) {
 				case 4:
 					printf("♘");
 					break;
-				case 5: 
+				case 5:
 					printf("♙");
                 case 6:
                     printf("♙");
@@ -67,4 +70,5 @@ int main () {
 	// rest of game...
 	
 	printf("Terminating...") ;
+
 }
