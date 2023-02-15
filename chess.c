@@ -1,22 +1,16 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-void showBoard(int board[8][8]) {
-	printf("Added on another branch...\n");
-}
 
-bool isValidMove (char* input, int board[8][8]) {
-	// Add move validity checks some other time! Too lazy!! 
-	return true;
-}
 
 void makeMove (char* input, int board[8][8]) {
-	int start_x = input[0] - 48;
-	int start_y = input[1] - 48;
-	int end_x = input[3] - 48;
-	int end_y = input[4] - 48;
+	int start_y = input[0] - 48;
+	int start_x = input[1] - 48;
+	int end_y = input[3] - 48;
+	int end_x = input[4] - 48;
 	
 	board[end_x][end_y] = board[start_x][start_y];
+	board[start_x][start_y] = 0;
 }
 
 int main () {
@@ -40,7 +34,7 @@ int main () {
   printf("Enter `q` to quit at any time.\n");
   printf("Moves are entered as co-ordinate pairs, such as \"13-33\" \n");
   do {
-    bool flag = false; 
+    bool flag = false;
     showBoard(board);
     do {
 	if (flag) {
@@ -54,8 +48,9 @@ int main () {
     	printf("♔ >> ");
 	scanf("%s", buf);
 	flag = true;
-    } while (!isValidMove(buf, board) && buf[0] != 'q' && buf[0] != 'Q');
+    } while (!isValidMove(buf, board)&& buf[0] != 'q' && buf[0] != 'Q');
     makeMove(buf, board);
+    whitesMove = !whitesMove;
   } while (buf[0] != 'q' && buf[0] != 'Q') ;
     
 	printf("Terminating...\n") ;
