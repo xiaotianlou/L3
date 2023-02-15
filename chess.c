@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdbool.h>
 
 
 bool isValidMove (char* input, int board[8][8]) {
